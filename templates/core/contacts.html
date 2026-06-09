@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Контакты — {{ SITE_NAME }}{% endblock %}
+{% block content %}
+<section class="container section">
+  <div class="section-head fade-up">
+    <p class="eyebrow">Контакты</p>
+    <h1>Напишите про задачу, и мы соберём решение</h1>
+  </div>
+  <div class="contact-grid">
+    <form class="card form fade-up" method="post">
+      {% csrf_token %}
+      {% if success %}<div class="alert success">Сообщение отправлено. Мы свяжемся с вами.</div>{% endif %}
+      {{ form.as_p }}
+      <button class="btn" type="submit">Отправить</button>
+    </form>
+    <aside class="card fade-up">
+      <h3>Контакты</h3>
+      <p>Телефон, почту, мессенджеры, реквизиты и карту проезда можно держать тут в одном месте.</p>
+      <div style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps/org/gruppa_kompaniy_yeks/30015567217/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Группа компаний Екс</a><a href="https://yandex.ru/maps/213/moscow/category/construction_and_repair_of_roads/184107599/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:14px;">Строительство и ремонт дорог в Москве</a><a href="https://yandex.ru/maps/213/moscow/category/design_institute/184107419/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:28px;">Проектная организация в Москве</a><iframe src="https://yandex.ru/map-widget/v1/?ll=37.562461%2C55.664817&mode=search&oid=30015567217&ol=biz&z=17" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+    </aside>
+  </div>
+</section>
+{% endblock %}

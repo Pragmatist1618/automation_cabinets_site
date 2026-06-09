@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block title %}{{ SITE_NAME }} — производство шкафов автоматики{% endblock %}
+{% block meta_description %}{{ SITE_DESCRIPTION }}{% endblock %}
+{% block content %}
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="fade-up">
+      <p class="eyebrow">Минимализм. Инженерия. Аккуратная документация.</p>
+      <h1>Производство шкафов автоматики под задачу и объект</h1>
+      <p class="lead">Проектируем, собираем, тестируем и сопровождаем шкафы управления для промышленности, инженерных систем и частных объектов.</p>
+      <div class="actions">
+        <a class="btn" href="{% url 'contacts' %}">Обсудить проект</a>
+        <a class="btn btn-ghost" href="{% url 'references' %}">Посмотреть примеры</a>
+      </div>
+    </div>
+    <div class="hero-card glass floaty">
+      <div class="stat"><span>01</span><strong>Проектирование</strong><p>Схемы, спецификации, логика, согласование.</p></div>
+      <div class="stat"><span>02</span><strong>Сборка</strong><p>Кабельный журнал, маркировка, проверка.</p></div>
+      <div class="stat"><span>03</span><strong>Доступы</strong><p>Закрытые схемы и исходники для каждого клиента.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="container section">
+  <div class="section-head fade-up">
+    <p class="eyebrow">Что делаем</p>
+    <h2>Полный цикл от идеи до запуска</h2>
+  </div>
+  <div class="grid cards">
+    {% for service in services %}
+      <article class="card fade-up">
+        <h3>{{ service.title }}</h3>
+        <p>{{ service.description }}</p>
+      </article>
+    {% empty %}
+      <article class="card fade-up">
+        <h3>Проектирование</h3>
+        <p>Схемы, подбор оборудования, логика и документация.</p>
+      </article>
+      <article class="card fade-up">
+        <h3>Сборка</h3>
+        <p>Шкафы автоматики, испытания, маркировка и упаковка.</p>
+      </article>
+      <article class="card fade-up">
+        <h3>Сопровождение</h3>
+        <p>Доступ к схемам, исходникам и архивам по проектам.</p>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="container section">
+  <div class="section-head fade-up">
+    <p class="eyebrow">Референсы</p>
+    <h2>Несколько примеров реализации</h2>
+  </div>
+  <div class="grid cards">
+    {% for item in references %}
+      <a class="card link-card fade-up" href="{{ item.get_absolute_url }}">
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.short_description }}</p>
+      </a>
+    {% empty %}
+      <div class="card fade-up"><p>Добавь сюда реальные кейсы — и они автоматически появятся в референс-листе.</p></div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

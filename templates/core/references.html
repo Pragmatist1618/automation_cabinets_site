@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Референс‑лист — {{ SITE_NAME }}{% endblock %}
+{% block content %}
+<section class="container section">
+  <div class="section-head fade-up">
+    <p class="eyebrow">Референс‑лист</p>
+    <h1>Примеры реализованных проектов</h1>
+  </div>
+  <div class="grid cards">
+    {% for item in references %}
+      <a class="card link-card fade-up" href="{{ item.get_absolute_url }}">
+        {% if item.main_image %}
+          <img class="preview" src="{{ item.main_image.url }}" alt="{{ item.title }}">
+        {% endif %}
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.short_description }}</p>
+        <small>{{ item.client_name }}</small>
+      </a>
+    {% empty %}
+      <div class="card fade-up">
+        <p>Пока кейсов нет. Заполни раздел через админку.</p>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

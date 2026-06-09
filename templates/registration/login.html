@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Вход — {{ SITE_NAME }}{% endblock %}
+{% block content %}
+<section class="container section">
+  <div class="card narrow fade-up">
+    <h1>Вход в личный кабинет</h1>
+    <form method="post" class="form">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button class="btn" type="submit">Войти</button>
+    </form>
+  </div>
+</section>
+{% endblock %}

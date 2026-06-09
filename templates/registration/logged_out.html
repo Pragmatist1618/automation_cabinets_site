@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="container section">
+  <div class="card fade-up">
+    <h1>Вы вышли из системы</h1>
+    <p><a class="btn" href="{% url 'login' %}">Войти снова</a></p>
+  </div>
+</section>
+{% endblock %}

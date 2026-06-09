@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Кабинет — {{ SITE_NAME }}{% endblock %}
+{% block content %}
+<section class="container section">
+  <div class="section-head fade-up">
+    <p class="eyebrow">Личный кабинет</p>
+    <h1>Ваши проекты и доступные материалы</h1>
+  </div>
+  <div class="grid cards">
+    {% for project in projects %}
+      <a class="card link-card fade-up" href="{{ project.get_absolute_url }}">
+        <h3>{{ project.title }}</h3>
+        <p>{{ project.description|default:"Описание будет добавлено позже." }}</p>
+      </a>
+    {% empty %}
+      <div class="card fade-up">
+        <p>Пока доступов нет. Администратор должен привязать пользователя к проекту в админке.</p>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

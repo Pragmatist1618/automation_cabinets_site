@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}{{ item.title }} — {{ SITE_NAME }}{% endblock %}
+{% block content %}
+<section class="container section">
+  <article class="card fade-up">
+    <p class="eyebrow">Кейс</p>
+    <h1>{{ item.title }}</h1>
+    <p class="lead">{{ item.short_description }}</p>
+    {% if item.client_name %}<p><strong>Клиент:</strong> {{ item.client_name }}</p>{% endif %}
+    {% if item.body %}<div class="prose">{{ item.body|linebreaks }}</div>{% endif %}
+  </article>
+
+  <div class="section-head fade-up">
+    <h2>Галерея</h2>
+  </div>
+
+  <div class="gallery">
+    {% if images %}
+      {% for image in images %}
+        <figure class="card fade-up {% if image.is_main %}gallery-main{% endif %}">
+          <img class="gallery-image" src="{{ image.image.url }}" alt="{{ image.title|default:item.title }}">
+          {% if image.title %}<figcaption>{{ image.title }}</figcaption>{% endif %}
+          {% if image.is_main %}<span class="badge">Главное фото</span>{% endif %}
+        </figure>
+      {% endfor %}
+    {% elif item.cover_image %}
+      <figure class="card fade-up gallery-main">
+        <img class="gallery-image" src="{{ item.cover_image.url }}" alt="{{ item.title }}">
+      </figure>
+    {% else %}
+      <div class="card fade-up"><p>Изображения пока не добавлены.</p></div>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

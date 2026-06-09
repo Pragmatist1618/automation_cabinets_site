@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}{{ project.title }} — кабинет{% endblock %}
+{% block content %}
+<section class="container section">
+  <article class="card fade-up">
+    <p class="eyebrow">Проект</p>
+    <h1>{{ project.title }}</h1>
+    <p>{{ project.description }}</p>
+    <p class="muted">Статус: {{ project.get_status_display }}</p>
+  </article>
+
+  <div class="section-head fade-up">
+    <h2>Файлы проекта</h2>
+  </div>
+
+  <div class="grid cards">
+    {% for file in files %}
+      <div class="card fade-up">
+        <h3>{{ file.title }}</h3>
+        <p>{{ file.get_category_display }}</p>
+        <a class="btn btn-ghost" href="{% url 'download_file' file.pk %}">Скачать</a>
+      </div>
+    {% empty %}
+      <div class="card fade-up">
+        <p>Файлы ещё не загружены.</p>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}
