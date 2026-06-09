@@ -17,7 +17,7 @@ class ContactForm(forms.ModelForm):
             "email": forms.EmailInput(attrs={"class": "input"}),
             "company": forms.TextInput(attrs={"class": "input"}),
             "phone": forms.TextInput(attrs={"class": "input"}),
-            "message": forms.Textarea(attrs={"class": "input textarea", "rows": 6}),
+            "message": forms.Textarea(attrs={"class": "input textarea", "rows": 12}),
         }
 
 

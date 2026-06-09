@@ -50,17 +50,39 @@
   </main>
 
   <footer class="footer">
-    <div class="container footer-grid">
-      <div>
-        <strong>{{ SITE_NAME }}</strong>
-        <p>Шкафы автоматики, АСУ ТП, документация, программное обеспечение и сопровождение.</p>
-      </div>
-      <div>
-        <p><a href="{% url 'contacts' %}">Связаться</a></p>
-        <p class="visually-hidden"><a href="{% url 'sitemap' %}">Sitemap</a></p>
-        <p class="visually-hidden"><a href="{% url 'robots.txt' %}">robots.txt</a></p>
-      </div>
+    <div class="container footer-content">
+
+        <!-- Левая часть: Бренд и описание -->
+        <div class="footer-brand">
+            <h3 class="footer-logo">{{ SITE_NAME }}</h3>
+            <p class="footer-desc">
+                Профессиональная автоматизация и диспетчеризация.<br>
+                Шкафы управления, PLC-программирование и диспетчеризация.
+            </p>
+        </div>
+
+        <!-- Правая часть: Навигация и контакты -->
+        <div class="footer-links">
+            <div class="link-column">
+                <h4>Навигация</h4>
+                <a href="{% url 'home' %}">Главная</a>
+                <a href="{% url 'references' %}">Референс‑лист</a>
+                <a href="{% url 'contacts' %}">Контакты</a>
+            </div>
+
+            <div class="link-column">
+                <h4>Документы</h4>
+                <!-- Ссылки для роботов оставим, но сделаем их аккуратнее -->
+                <a href="{% url 'sitemap' %}" class="tech-link">Карта сайта</a>
+                <a href="{% url 'robots.txt' %}" class="tech-link">Robots.txt</a>
+            </div>
+        </div>
     </div>
-  </footer>
+
+    <!-- Нижняя полоса с копирайтом -->
+    <div class="footer-bottom container">
+        <p>&copy; {% now "Y" %} {{ SITE_NAME }}. Все права защищены.</p>
+    </div>
+</footer>
 </body>
 </html>
