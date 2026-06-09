@@ -124,3 +124,39 @@ h2{font-size:clamp(1.8rem, 3vw, 3rem)}
   padding:20px;
   color:var(--muted);
 }
+/* 1. Заставляем форму вести себя как часть flex-контейнера */
+.logout-form {
+    display: inline; /* Или 'contents', если форма внутри .menu */
+    margin: 0;
+}
+
+/* 2. Стилізуем саму кнопку, чтобы она была похожа на ссылки в меню */
+.logout-btn {
+    background: none;      /* Убираем серый фон кнопки */
+    border: none;          /* Убираем рамку */
+    padding: 0;            /* Убираем внутренние отступы */
+    font-family: inherit;  /* Наследуем шрифт от body (Inter) */
+    font-size: inherit;    /* Наследуем размер текста */
+    color: var(--muted);   /* Цвет как у остальных пунктов меню */
+    cursor: pointer;       /* Курсор в виде руки при наведении */
+    text-decoration: none; /* Убираем подчеркивание, если есть */
+    transition: color 0.2s ease; /* Плавное изменение цвета */
+}
+
+/* 3. Добавляем эффект при наведении (как у ссылок) */
+.logout-btn:hover {
+    color: var(--accent); /* При наведении становится акцентного цвета */
+}
+
+/* Класс для скрытия элементов, оставляя их доступными для скринридеров */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}

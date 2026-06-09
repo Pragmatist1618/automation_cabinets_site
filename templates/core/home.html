@@ -5,18 +5,18 @@
 <section class="hero">
   <div class="container hero-grid">
     <div class="fade-up">
-      <p class="eyebrow">Минимализм. Инженерия. Аккуратная документация.</p>
-      <h1>Производство шкафов автоматики под задачу и объект</h1>
-      <p class="lead">Проектируем, собираем, тестируем и сопровождаем шкафы управления для промышленности, инженерных систем и частных объектов.</p>
+      <p class="eyebrow">Автоматизация и диспетчеризация инженерных систем</p>
+      <h1>Производство шкафов автоматики</h1>
+      <p class="lead"> Разработка шкафов управления «под ключ»: от схемотехники до ввода в эксплуатацию.</p>
       <div class="actions">
         <a class="btn" href="{% url 'contacts' %}">Обсудить проект</a>
         <a class="btn btn-ghost" href="{% url 'references' %}">Посмотреть примеры</a>
       </div>
     </div>
     <div class="hero-card glass floaty">
-      <div class="stat"><span>01</span><strong>Проектирование</strong><p>Схемы, спецификации, логика, согласование.</p></div>
-      <div class="stat"><span>02</span><strong>Сборка</strong><p>Кабельный журнал, маркировка, проверка.</p></div>
-      <div class="stat"><span>03</span><strong>Доступы</strong><p>Закрытые схемы и исходники для каждого клиента.</p></div>
+      <div class="stat"><span>01</span><strong> Проектирование</strong><p> Разработка электрических схем, подбор компонентной базы и алгоритмов управления.</p></div>
+      <div class="stat"><span>02</span><strong> Сборка</strong><p>Сборка шкафов, программирование контроллеров, диспетчиризация и стендовые испытания.</p></div>
+      <div class="stat"><span>03</span><strong> Сопровождение</strong><p>Пусконаладочные работы и обучение персонала.</p></div>
     </div>
   </div>
 </section>
@@ -34,16 +34,44 @@
       </article>
     {% empty %}
       <article class="card fade-up">
-        <h3>Проектирование</h3>
-        <p>Схемы, подбор оборудования, логика и документация.</p>
+        <h3>Шкафы автоматики:</h3>
+        <p>Для насосных станций, вентиляции, освещения, умных домов и промышленных линий.</p>
       </article>
       <article class="card fade-up">
-        <h3>Сборка</h3>
-        <p>Шкафы автоматики, испытания, маркировка и упаковка.</p>
+        <h3>Диспетчеризация:</h3>
+        <p>Удаленный мониторинг и управление системами.</p>
       </article>
       <article class="card fade-up">
-        <h3>Сопровождение</h3>
-        <p>Доступ к схемам, исходникам и архивам по проектам.</p>
+        <h3>Модернизация:</h3>
+        <p>Обновление устаревших систем управления.</p>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="container section">
+  <div class="section-head fade-up">
+    <p class="eyebrow">Экспертиза</p>
+    <h2>Инженерные решения под ключ</h2>
+  </div>
+  <div class="grid cards">
+    {% for service in services %}
+      <article class="card fade-up">
+        <h3>{{ service.title }}</h3>
+        <p>{{ service.description }}</p>
+      </article>
+    {% empty %}
+      <article class="card fade-up">
+        <h3>Полный цикл разработки:</h3>
+        <p> От идеи на бумаге до работающего «железа».</p>
+      </article>
+      <article class="card fade-up">
+        <h3>Прозрачность:</h3>
+        <p>Предоставляем исходный код программ и актуальные схемы после сдачи объекта.</p>
+      </article>
+      <article class="card fade-up">
+        <h3>Любая сложность:</h3>
+        <p>От управления освещением в коттедже до диспетчеризации крупных котельных.</p>
       </article>
     {% endfor %}
   </div>

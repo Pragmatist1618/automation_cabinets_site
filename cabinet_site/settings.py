@@ -86,8 +86,8 @@ LOGOUT_REDIRECT_URL = "home"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-SITE_NAME = "Шкафы автоматики"
-SITE_DESCRIPTION = "Проектирование, сборка, пусконаладка и сопровождение шкафов автоматики."
+SITE_NAME = "Practical Logic Action"
+SITE_DESCRIPTION = "Автоматизация и диспетчеризация инженерных систем"
 YANDEX_VERIFICATION_CODE = env("YANDEX_VERIFICATION_CODE", "")
 YANDEX_MAP_EMBED_URL = env("YANDEX_MAP_EMBED_URL", "")
 
