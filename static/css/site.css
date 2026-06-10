@@ -465,3 +465,11 @@ figure.card {
     border-bottom-color: var(--text);
     background: rgba(125, 211, 252, 0.1); /* Легкая подсветка */
 }
+
+.phone-number {
+    display: flex;
+    gap: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+/* Можно добавить псевдоэлементы для дефисов, если хочешь усложнить */
