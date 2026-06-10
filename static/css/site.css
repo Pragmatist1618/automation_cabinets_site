@@ -330,3 +330,41 @@ h2{font-size:clamp(1.8rem, 3vw, 3rem)}
         gap: 30px;
     }
 }
+
+/* Базовая сетка галереи */
+.gallery {
+    display: grid;
+    gap: 24px; /* Отступ между картинками */
+    /* По умолчанию делаем 2 колонки для планшетов и маленьких ноутбуков */
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* Адаптив для телефонов (меньше 1023px) */
+@media (max-width: 1023px) {
+    .gallery {
+        grid-template-columns: 1fr; /* Принудительно 1 колонка */
+        gap: 16px;
+    }
+}
+
+/* 1. Контейнер figure */
+figure.card {
+    padding: 10px; /* Убираем отступы, чтобы фото было во всю ширину */
+    overflow: hidden; /* Обрезаем лишнее */
+    display: flex; /* Включаем флексбокс */
+    align-items: center; /* Центрируем по вертикали */
+    justify-content: center; /* Центрируем по горизонтали */
+    background: var(--panel); /* Фон на случай пустых полей */
+    min-height: 200px; /* Минимальная высота, чтобы карточка не схлопнулась */
+}
+
+/* 2. Картинка */
+.gallery-image {
+    width: 90%; /* Занимает всю ширину */
+    height: auto; /* Высота подстраивается под пропорции */
+    aspect-ratio: 16 / 9; /* <-- ВОЗВРАЩАЕМ ПРОПОРЦИИ */
+    object-fit: cover; /* Заполняет область, сохраняя центр */
+    border-radius: var(--radius);
+    margin-bottom: 0; /* Убираем лишний отступ */
+    display: block;
+}
