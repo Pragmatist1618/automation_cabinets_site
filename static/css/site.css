@@ -44,7 +44,7 @@ h2{font-size:clamp(1.8rem, 3vw, 3rem)}
 }
 .btn-ghost{background:transparent;color:var(--text);border-color:var(--line);box-shadow:none}
 .section{padding:42px 0}
-.section-head{margin-bottom:20px}
+.section-head{margin-bottom:20px;}
 .grid{display:grid;gap:18px}
 .cards{grid-template-columns:repeat(3, minmax(0, 1fr))}
 .card{
@@ -368,3 +368,5 @@ figure.card {
     margin-bottom: 0; /* Убираем лишний отступ */
     display: block;
 }
+
+.section-head-ref{ margin-top: 30px;}
