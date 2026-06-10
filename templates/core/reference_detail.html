@@ -20,7 +20,6 @@
         <figure class="card fade-up {% if image.is_main %}gallery-main{% endif %}">
           <img class="gallery-image" src="{{ image.image.url }}" alt="{{ image.title|default:item.title }}">
           {% if image.title %}<figcaption>{{ image.title }}</figcaption>{% endif %}
-          {% if image.is_main %}<span class="badge">Главное фото</span>{% endif %}
         </figure>
       {% endfor %}
     {% elif item.cover_image %}
