@@ -1,5 +1,6 @@
 from django import forms
 from .models import ContactMessage
+from django.utils.safestring import mark_safe
 
 class ContactForm(forms.ModelForm):
     class Meta:
@@ -20,4 +21,9 @@ class ContactForm(forms.ModelForm):
             "message": forms.Textarea(attrs={"class": "input textarea", "rows": 12}),
         }
 
+    agree_to_terms = forms.BooleanField(
+        label=mark_safe('Я согласен на <a href="/privacy-policy/" target="_blank">обработку персональных данных</a>'),
+        required=True,
+        widget=forms.CheckboxInput(attrs={"class": "checkbox"})
+    )
 

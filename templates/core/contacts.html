@@ -8,10 +8,47 @@
   </div>
   <div class="contact-grid">
     <form class="card form fade-up" method="post">
-      {% csrf_token %}
-      {% if success %}<div class="alert success">Сообщение отправлено. Мы свяжемся с вами.</div>{% endif %}
-      {{ form.as_p }}
-      <button class="btn" type="submit">Отправить</button>
+        {% csrf_token %}
+
+        {% if success %}
+            <div class="alert success">Сообщение отправлено. Мы свяжемся с вами.</div>
+        {% endif %}
+
+        <!-- Обычные поля -->
+        <div class="form-group">
+            <label for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>
+            {{ form.name }}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
+            {{ form.email }}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.phone.id_for_label }}">{{ form.phone.label }}</label>
+            {{ form.phone }}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.company.id_for_label }}">{{ form.company.label }}</label>
+            {{ form.company }}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.message.id_for_label }}">{{ form.message.label }}</label>
+            {{ form.message }}
+        </div>
+
+        <!-- Галочка согласия (отдельный блок) -->
+        <div class="checkbox-wrapper">
+            {{ form.agree_to_terms }}
+            <label for="{{ form.agree_to_terms.id_for_label }}">
+                {{ form.agree_to_terms.label }}
+            </label>
+        </div>
+
+        <button class="btn" type="submit">Отправить</button>
     </form>
     <aside class="card fade-up">
       <h3>Контакты</h3>

@@ -370,3 +370,98 @@ figure.card {
 }
 
 .section-head-ref{ margin-top: 30px;}
+
+/* Стили для группы полей */
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+/* Стили для галочки (из прошлого сообщения) */
+.checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 10px;
+    margin-bottom: 24px; /* Отступ до кнопки */
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    accent-color: var(--accent);
+}
+
+/* Карточка политики */
+.policy-card {
+    max-width: 800px; /* Ограничиваем ширину для удобства чтения */
+    margin: 0 auto;   /* Центрируем карточку */
+    padding: 40px;
+}
+
+/* Основной текст политики */
+.policy-text {
+    font-size: 0.95rem; /* Уменьшенный, но читаемый шрифт */
+    line-height: 1.7;   /* Увеличенный интервал для "воздуха" */
+    color: var(--text);
+}
+
+/* Заголовки внутри текста */
+.policy-text h2 {
+    font-size: 1.2rem;
+    margin-top: 32px;
+    margin-bottom: 16px;
+    color: var(--accent); /* Выделяем заголовки акцентным цветом */
+    font-weight: 600;
+}
+
+/* Списки */
+.policy-text ul {
+    margin-bottom: 20px;
+    padding-left: 24px;
+}
+
+.policy-text li {
+    margin-bottom: 8px;
+    color: var(--muted);
+}
+
+/* Ссылка-выделение (для почты и документов) */
+.highlight-link {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dashed var(--accent); /* Пунктирное подчеркивание */
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.highlight-link:hover {
+    color: var(--text);
+    border-bottom-style: solid;
+    background: rgba(125, 211, 252, 0.1); /* Легкая подсветка фона */
+}
+
+/* Ссылка внутри текста согласия */
+.checkbox-wrapper a {
+    color: var(--accent); /* Твой голубой цвет */
+    text-decoration: none; /* Убираем стандартное подчеркивание */
+    border-bottom: 1px dashed var(--accent); /* Делаем пунктирное подчеркивание */
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.checkbox-wrapper a:hover {
+    color: var(--text); /* При наведении становится белым */
+    border-bottom-color: var(--text);
+    background: rgba(125, 211, 252, 0.1); /* Легкая подсветка */
+}

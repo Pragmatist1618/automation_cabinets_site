@@ -83,3 +83,6 @@ def robots_txt(request):
         "Sitemap: " + request.build_absolute_uri(reverse("sitemap")),
     ]
     return HttpResponse("\n".join(lines), content_type="text/plain; charset=utf-8")
+
+def privacy_policy(request):
+    return render(request, "core/privacy_policy.html")

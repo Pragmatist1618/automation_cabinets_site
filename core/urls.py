@@ -9,4 +9,5 @@ urlpatterns = [
     path("dashboard/", views.dashboard, name="dashboard"),
     path("projects/<slug:slug>/", views.project_detail, name="project_detail"),
     path("files/<int:pk>/download/", views.download_file, name="download_file"),
+    path('privacy-policy/', views.privacy_policy, name='privacy_policy'),
 ]
