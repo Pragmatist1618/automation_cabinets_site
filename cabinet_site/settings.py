@@ -8,8 +8,8 @@ def env(name, default=None):
 
 SECRET_KEY = env("SECRET_KEY", "django-insecure-change-me")
 #DEBUG = env("DEBUG", "0") == "1"
-DEBUG = 1
-ALLOWED_HOSTS = [h.strip() for h in env("ALLOWED_HOSTS", "127.0.0.1,localhost,188.244.35.36,pralac.tech").split(",") if h.strip()]
+DEBUG = 0
+ALLOWED_HOSTS = [h.strip() for h in env("ALLOWED_HOSTS", "127.0.0.1,localhost,188.244.35.36,pralac.tech,www.pralac.tech").split(",") if h.strip()]
 CSRF_TRUSTED_ORIGINS = [u.strip() for u in env("CSRF_TRUSTED_ORIGINS", "").split(",") if u.strip()]
 
 INSTALLED_APPS = [
